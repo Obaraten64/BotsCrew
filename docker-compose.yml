@@ -9,7 +9,7 @@ services:
         condition: service_healthy
     environment:
       SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/botscrew"
-      SPRING_JPA_HIBERNATE_DDL-AUTO: "update"
+      SPRING_JPA_HIBERNATE_DDL-AUTO: "crate"
 
   db:
     container_name: db

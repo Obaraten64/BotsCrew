@@ -1,6 +1,5 @@
 package com.bots.crew.botscrew;
 
-import com.bots.crew.botscrew.service.CommandFactory;
 import com.bots.crew.botscrew.config.Patterns;
 import com.bots.crew.botscrew.service.BotsCrewService;
 
@@ -45,8 +44,7 @@ public class BotsCrewApplication {
             Matcher matcher = pattern.getPattern().matcher(command);
 
             if (matcher.matches()) {
-                return CommandFactory.execute(matcher.group(1),
-                        pattern.getCommand(), botsCrewService);
+                return pattern.getCommand().execute(matcher.group(1), botsCrewService);
             }
         }
 
