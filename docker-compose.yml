@@ -1,6 +1,8 @@
 services:
   botscrew:
     container_name: botscrew
+    stdin_open: true
+    tty: true
     build: .
     ports:
       - 8080:8080
@@ -9,7 +11,7 @@ services:
         condition: service_healthy
     environment:
       SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/botscrew"
-      SPRING_JPA_HIBERNATE_DDL-AUTO: "crate"
+      SPRING_JPA_HIBERNATE_DDL-AUTO: "create"
 
   db:
     container_name: db
