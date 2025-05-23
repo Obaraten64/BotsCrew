@@ -17,7 +17,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: traveling
+      MYSQL_DATABASE: botscrew
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
